@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Le2LeJosEv3-Ev3Meg Resources ANT Build file -->
+<project name="Le2LeJosEv3-Ev3Meg-resources" default="all">
+
+	<!-- packaging -->
+	<target name="packaging">
+		<tstamp>
+			<format property="build.time" pattern="yyyy-MM-dd HH:mm:ss" />
+		</tstamp>
+		<jar destfile="ev3megres.jar">
+			<manifest>
+				<attribute name="Product-Name" value="Le2LeJosEv3-Ev3MegRes" />
+				<attribute name="Product-Vendor" value="Le2LeJosEv3 Team" />
+				<attribute name="Built-Date" value="${build.time}" />
+			</manifest>
+			<zipfileset dir="." includes="resources/*.lni,resources/*.wav" />
+		</jar>
+	</target>
+
+	<!-- all -->
+	<target name="all" depends="packaging">
+	</target>
+
+</project>
